@@ -150,7 +150,7 @@ func (b *Builder) SetConfigurations() *Builder {
 
 	inbound.StreamSettings.TCPSettings.Header.Type = "http"
 
-	port := strconv.Itoa(inbound.Port)
+	port := "80"
 
 	inbound.Tag = "inbound-" + port
 
