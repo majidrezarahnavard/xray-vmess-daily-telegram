@@ -82,7 +82,7 @@ func (b *Builder) SetConfigurations() *Builder {
 	hostSelected4 := hosts[randomNumber(len(hosts))]
 	hostSelected := hostSelected1 + "," + hostSelected2 + "," + hostSelected3 + "," + hostSelected4
 
-	ports := []int{844, 8080, 8080, 8080, 443, 2087, 8880, 10050, 6443, 2086, 2095, 2082}
+	ports := []int{8081}
 	portSelected := ports[randomNumber(len(ports))]
 
 	methods := []string{"GET", "POST"}
@@ -100,7 +100,7 @@ func (b *Builder) SetConfigurations() *Builder {
 	statusSelected := statuses[randomNumber(len(statuses))]
 
 	if !b.Setting.RandomHeader {
-		portSelected = b.Setting.Port
+		portSelected = 8081
 		methodSelected = "GET"
 		pathSelected = "/download"
 		contextLength = "109"

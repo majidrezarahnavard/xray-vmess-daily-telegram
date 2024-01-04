@@ -23,9 +23,9 @@ func NewSubscribe(builder *builder.Builder,
 		execute: executeInstance,
 	}
 
-	if len(sub.builder.Setting.AggregateSubscriptions) > 0 {
-		sub.setAggregateSubscriptions()
-	}
+	// if len(sub.builder.Setting.AggregateSubscriptions) > 0 {
+	// 	sub.setAggregateSubscriptions()
+	// }
 
 	err := sub.doSubscribe()
 	if err != nil {
@@ -69,9 +69,9 @@ func (s *Subscribe) doSubscribe() error {
 
 	if s.builder.Setting.DynamicSubscription {
 		randomUUID := rand.Intn(10000)
-		s.SubscriptionNameLink = "subscribe." + strconv.Itoa(randomUUID) + ".txt"
+		s.SubscriptionNameLink = "s." + strconv.Itoa(randomUUID) + ".txt"
 	} else {
-		s.SubscriptionNameLink = "subscribe.txt"
+		s.SubscriptionNameLink = "s.txt"
 	}
 
 	SaveSubscribe("./"+s.SubscriptionNameLink, s.builder.StringConfigZero)
