@@ -88,7 +88,29 @@ func (b *Builder) SetConfigurations() *Builder {
 	methods := []string{"GET", "POST"}
 	methodSelected := methods[randomNumber(len(methods))]
 
-	path := []string{"/upload", "/download"}
+	path := []string{
+		"/upload",
+		"/download",
+		"/api/v1/users",
+		"/api/v2/users",
+		"/blocks/v1/users",
+		"/negotiation/users/v1",
+		"/books/v1/handler",
+		"/shop/buyer/v2",
+		"/help-desk/v1/help",
+		"/apple/users",
+		"/humbles/users",
+		"/dirty/class/v1",
+		"/small-house/v2/users",
+		"/low/users/schools/v1",
+		"/high/users/schools/v2",
+		"/users/v1/low/schools",
+		"/hi-users/v2/high/schools",
+		"/api-api/c2/v1/user",
+		"/book/users/v1",
+		"/rest/v2/shop",
+		"/humble/v3/school/thief",
+	}
 	pathSelected := path[randomNumber(len(path))]
 
 	contextLength := strconv.Itoa(100 + randomNumber(100))
